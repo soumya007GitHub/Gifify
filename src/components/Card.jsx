@@ -20,7 +20,7 @@ const Card = ({ details }) => {
       </a>
       <div className="flex justify-between items-center absolute bottom-0 bg-linear-to-b transparent to-black px-4 py-6 w-full">
         <span className='inline'>{title}</span>
-        <button className="bg-violet-800 px-5 py-2 rounded active:scale-95 cursor-pointer" onClick={
+        <button className="bg-violet-800 px-5 py-2 rounded active:scale-95 cursor-pointer hover:scale-110 transition" onClick={
           ()=>saveToCollection(details)
         }>Save</button>
       </div>

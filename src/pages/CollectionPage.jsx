@@ -21,12 +21,17 @@ const CollectionPage = () => {
         setData(newData);
         localStorage.setItem("collection", JSON.stringify(newData));
     }
+    const removeAll = () => {
+        setData([]);
+        localStorage.clear();
+    }
 
     return (
         <>
             <NavBar />
-            <div className="w-full min-h-screen flex flex-wrap justify-center items-center mt-5">
-                {data.length==0 && <p className='absolute top-[60%] self-center text-gray-400'>Nothing is saved :(</p>}
+                <button className="bg-red-800 px-5 py-2 rounded active:scale-95 cursor-pointer ml-5 hover:scale-110 transition" onClick={removeAll}>Remove All</button>
+            <div className="w-full flex flex-wrap justify-center items-center mt-5">
+                {data.length == 0 && <p className='absolute top-[60%] self-center text-gray-400'>Nothing is saved :(</p>}
                 {
                     data.map((item, index) => {
                         return (
@@ -42,7 +47,7 @@ const CollectionPage = () => {
                                 </a>
                                 <div className="flex justify-between items-center absolute bottom-0 bg-linear-to-b transparent to-black px-4 py-6 w-full">
                                     <span className='inline'>{item.title}</span>
-                                    <button className="bg-red-800 px-5 py-2 rounded active:scale-95 cursor-pointer" onClick={
+                                    <button className="bg-red-800 px-5 py-2 rounded active:scale-95 cursor-pointer hover:scale-110 transition" onClick={
                                         () => removeFromCollection(item.id)
                                     }>Remove</button>
                                 </div>
