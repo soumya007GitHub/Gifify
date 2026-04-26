@@ -37,16 +37,18 @@ const ResultGrid = () => {
         }
     }, [qFromStore, activeTabFromStore, dispatch])
     return (
-        <div className="w-full min-h-screen flex flex-wrap justify-center items-center mt-5">
-            {loadingFromStore && <p className='text-lg font-bold self-center'>Loading...</p>}
+        <>
+            {loadingFromStore && <p className='text-lg font-bold text-center'>Loading...</p>}
             {errorFromStore && <p className='text-lg font-bold self-center'>{errorFromStore}</p>}
-            {
-                resultFromStore.map((item, index)=>{
-                    console.log(item);
-                    return <Card details={item} key={index}/>
-                })
-            }
-        </div>
+            <div className="w-full min-h-screen flex flex-wrap justify-center items-center mt-5">
+                {
+                    resultFromStore.map((item, index) => {
+                        console.log(item);
+                        return <Card details={item} key={index} />
+                    })
+                }
+            </div>
+        </>
     )
 }
 
