@@ -3,7 +3,7 @@ import React from 'react'
 const Card = ({ details }) => {
   const saveToCollection = (details)=>{
     const allData = JSON.parse(localStorage.getItem("collection")) || [];
-    allData.push(JSON.stringify(details));
+    allData.push(details);
     localStorage.setItem("collection", JSON.stringify(allData));
   }
   const { id, type, thumbnail, src, title } = { ...details };

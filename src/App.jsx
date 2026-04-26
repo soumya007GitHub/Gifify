@@ -4,7 +4,7 @@ import CollectionPage from './pages/CollectionPage';
 
 const App = () => {
   return (
-    <div className='min-h-screen w-full bg-gray-950 text-white p-4'>
+    <div className='min-h-screen w-full bg-gray-950 text-white'>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/saved" element={<CollectionPage />} />

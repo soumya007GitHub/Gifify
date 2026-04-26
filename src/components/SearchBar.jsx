@@ -14,17 +14,17 @@ const SearchBar = () => {
                 dispatch(setQuery(query));
             }
         }>
-            <input type="text" placeholder="e.g. Nature" className='' value={query}
+            <input type="text" placeholder="e.g. Nature" value={query}
                 onChange = {
                     (e)=>{
                         const value = e.target.value;
                         setLocalQuery(value);
                     }
                     }
-                className="border border-amber-50 rounded px-4 py-3 w-full"
+                className="border border-gray-900 rounded focus:border-gray-600 px-4 py-3 w-full outline-none"
                 required
             />
-            <button className='border border-amber-50 px-4 py-3 rounded cursor-pointer active:scale-95'>Search</button>
+            <button className='border border-gray-900 focus:border-gray-600 px-4 py-3 rounded cursor-pointer active:scale-95 bg-violet-950 hover:scale-110 transition'>Search</button>
         </form>
     </div>
   )

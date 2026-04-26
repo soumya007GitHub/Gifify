@@ -14,8 +14,8 @@ const Tabs = () => {
               dispatch(setActiveTab(tab));
             }
           } className={tabFromStore == tab ? 
-          'bg-white text-black px-3 py-2 rounded active:scale-95' : 
-          'border border-white px-3 py-2 rounded active:scale-95'}>
+          'bg-violet-600 text-white px-3 py-2 rounded active:scale-95 hover:scale-110 transition' : 
+          'border border-gray-900 active px-3 py-2 rounded active:scale-95 hover:scale-110 transition'}>
           {tab}
           </button>
         })
