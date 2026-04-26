@@ -7,7 +7,7 @@ const SearchBar = () => {
     const [query, setLocalQuery] = useState(qFromStore);
     const dispatch = useDispatch();
   return (
-    <div>
+    <div className='w-[90%]'>
         <form className='flex items-center gap-5' onSubmit={
             (e)=>{
                 e.preventDefault();

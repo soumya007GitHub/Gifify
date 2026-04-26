@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getPhotos = async (query, page = 1, per_page = 15) => {
+export const getPhotos = async (query = triumph, page = 1, per_page = 15) => {
     const response = await axios.get(
         import.meta.env.VITE_UNSPLASH_URL, {
         params: {
@@ -13,7 +13,7 @@ export const getPhotos = async (query, page = 1, per_page = 15) => {
         }
     }
     )
-    return response.data.results.map((result)=>({
+    return response.data.results.map((result) => ({
         id: result.id,
         type: 'Image',
         thumbnail: result.links.download,
@@ -22,7 +22,7 @@ export const getPhotos = async (query, page = 1, per_page = 15) => {
     }));
 }
 
-export const getVideos = async (query, page = 1, per_page = 10)=>{
+export const getVideos = async (query, page = 1, per_page = 10) => {
     const response = await axios.get(
         import.meta.env.VITE_PEXELS_URL, {
         params: {
@@ -36,7 +36,7 @@ export const getVideos = async (query, page = 1, per_page = 10)=>{
     }
     );
 
-    return response.data.videos.map((result)=>({
+    return response.data.videos.map((result) => ({
         id: result.id,
         type: 'Video',
         thumbnail: result.image,
@@ -45,17 +45,17 @@ export const getVideos = async (query, page = 1, per_page = 10)=>{
     }));
 }
 
-export const getGifs = async (query, limit = 50)=>{
+export const getGifs = async (query, limit = 50) => {
     const response = await axios.get(
         import.meta.env.VITE_GIPHY_URL, {
-            params: {
-                q: query,
-                limit: limit,
-                api_key: import.meta.env.VITE_GIPHY_API_KEY
-            }
+        params: {
+            q: query,
+            limit: limit,
+            api_key: import.meta.env.VITE_GIPHY_API_KEY
         }
+    }
     )
-    return response.data.data.map((result)=>({
+    return response.data.data.map((result) => ({
         id: result.id,
         type: 'GIF',
         thumbnail: result.embed_url,

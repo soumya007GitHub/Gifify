@@ -8,7 +8,7 @@ const HomePage = () => {
     return (
         <div>
             <NavBar />
-            <div className='px-5'>
+            <div className='px-5 flex flex-col justify-center items-center'>
             <SearchBar />
             <Tabs />
             <ResultGrid />
